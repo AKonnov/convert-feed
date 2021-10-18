@@ -1,0 +1,7 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require '../lib/convert-feed/cli'
+
+status = ConvertFeed::CLI.new.run(ARGV).nil? ? 0 : 1
+exit status
