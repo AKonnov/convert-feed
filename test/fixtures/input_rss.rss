@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Новые уроки на Хекслете</title>
+    <description>Практические уроки по программированию</description>
+    <link>https://ru.hexlet.io/</link>
+    <webMaster>info@hexlet.io</webMaster>
+    <item>
+      <title>Gulpfile / Gulp</title>
+      <guid isPermaLink="false">2171</guid>
+      <link>https://ru.hexlet.io/courses/gulp/lessons/gulpfile/theory_unit</link>
+      <description>Цель: Изучить базовую структуру gulpfile.js. Создать свои первые задачи и научиться их экспортировать</description>
+      <pubDate>Mon, 18 Oct 2021 08:41:12 +0000</pubDate>
+    </item>
+    <item>
+      <title>Установка / Gulp</title>
+      <guid isPermaLink="false">2170</guid>
+      <link>https://ru.hexlet.io/courses/gulp/lessons/install/theory_unit</link>
+      <description>Цель: Научиться устанавливать Gulp и изучить базовые опции при работе с ним</description>
+      <pubDate>Mon, 18 Oct 2021 08:41:08 +0000</pubDate>
+    </item>
+    <item>
+      <title>Введение / Gulp</title>
+      <guid isPermaLink="false">2169</guid>
+      <link>https://ru.hexlet.io/courses/gulp/lessons/intro/theory_unit</link>
+      <description>Цель: Узнать о таск-менеджере Gulp и сферах его применения</description>
+      <pubDate>Mon, 18 Oct 2021 08:41:05 +0000</pubDate>
+    </item>
+    <item>
+      <title>Хук useRef / JS: React Hooks</title>
+      <guid isPermaLink="false">2159</guid>
+      <link>https://ru.hexlet.io/courses/js-react-hooks/lessons/use-ref/theory_unit</link>
+      <description>Цель: Познакомиться с курсом и подготовить окружение</description>
+      <pubDate>Fri, 15 Oct 2021 19:56:40 +0000</pubDate>
+    </item>
+    <item>
+      <title>Хук useContext / JS: React Hooks</title>
+      <guid isPermaLink="false">2158</guid>
+      <link>https://ru.hexlet.io/courses/js-react-hooks/lessons/use-context/theory_unit</link>
+      <description>Цель: Научиться работать с контекстом через хуки</description>
+      <pubDate>Fri, 15 Oct 2021 19:56:36 +0000</pubDate>
+    </item>
+  </channel>
+</rss>

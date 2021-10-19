@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+<title>Новые уроки на Хекслете</title>
+<subtitle>Практические уроки по программированию</subtitle>
+<id>https://ru.hexlet.io/</id>
+<updated>2021-10-18T08:41:12+00:00</updated>
+
+<entry>
+  <id>https://ru.hexlet.io/courses/gulp/lessons/gulpfile/theory_unit</id>
+  <updated>2021-10-18T08:41:12+00:00</updated>
+  <link rel="alternate" type="text/html" href="https://ru.hexlet.io/courses/gulp/lessons/gulpfile/theory_unit" />
+  <published>2021-10-18T08:41:12+00:00</published>
+    <author>
+      <name>info@hexlet.io</name>
+      <uri>https://ru.hexlet.io/</uri>
+      <email>info@hexlet.io</email>
+    </author>
+  <title>Gulpfile / Gulp</title>
+  <summary>Цель: Изучить базовую структуру gulpfile.js. Создать свои первые задачи и научиться их экспортировать</summary>
+</entry>
+
+<entry>
+  <id>https://ru.hexlet.io/courses/gulp/lessons/install/theory_unit</id>
+  <updated>2021-10-18T08:41:08+00:00</updated>
+  <link rel="alternate" type="text/html" href="https://ru.hexlet.io/courses/gulp/lessons/install/theory_unit" />
+  <published>2021-10-18T08:41:08+00:00</published>
+    <author>
+      <name>info@hexlet.io</name>
+      <uri>https://ru.hexlet.io/</uri>
+      <email>info@hexlet.io</email>
+    </author>
+  <title>Установка / Gulp</title>
+  <summary>Цель: Научиться устанавливать Gulp и изучить базовые опции при работе с ним</summary>
+</entry>
+
+<entry>
+  <id>https://ru.hexlet.io/courses/gulp/lessons/intro/theory_unit</id>
+  <updated>2021-10-18T08:41:05+00:00</updated>
+  <link rel="alternate" type="text/html" href="https://ru.hexlet.io/courses/gulp/lessons/intro/theory_unit" />
+  <published>2021-10-18T08:41:05+00:00</published>
+    <author>
+      <name>info@hexlet.io</name>
+      <uri>https://ru.hexlet.io/</uri>
+      <email>info@hexlet.io</email>
+    </author>
+  <title>Введение / Gulp</title>
+  <summary>Цель: Узнать о таск-менеджере Gulp и сферах его применения</summary>
+</entry>
+
+<entry>
+  <id>https://ru.hexlet.io/courses/js-react-hooks/lessons/use-ref/theory_unit</id>
+  <updated>2021-10-15T19:56:40+00:00</updated>
+  <link rel="alternate" type="text/html" href="https://ru.hexlet.io/courses/js-react-hooks/lessons/use-ref/theory_unit" />
+  <published>2021-10-15T19:56:40+00:00</published>
+    <author>
+      <name>info@hexlet.io</name>
+      <uri>https://ru.hexlet.io/</uri>
+      <email>info@hexlet.io</email>
+    </author>
+  <title>Хук useRef / JS: React Hooks</title>
+  <summary>Цель: Познакомиться с курсом и подготовить окружение</summary>
+</entry>
+
+<entry>
+  <id>https://ru.hexlet.io/courses/js-react-hooks/lessons/use-context/theory_unit</id>
+  <updated>2021-10-15T19:56:36+00:00</updated>
+  <link rel="alternate" type="text/html" href="https://ru.hexlet.io/courses/js-react-hooks/lessons/use-context/theory_unit" />
+  <published>2021-10-15T19:56:36+00:00</published>
+    <author>
+      <name>info@hexlet.io</name>
+      <uri>https://ru.hexlet.io/</uri>
+      <email>info@hexlet.io</email>
+    </author>
+  <title>Хук useContext / JS: React Hooks</title>
+  <summary>Цель: Научиться работать с контекстом через хуки</summary>
+</entry>
+
+</feed>
