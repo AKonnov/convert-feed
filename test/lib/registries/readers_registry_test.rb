@@ -15,7 +15,7 @@ class ReadersRegistryTest < Minitest::Test
   end
 
   def test_exception_unknown_reader
-    assert_raises do
+    assert_raises TypeError do
       ReadersRegistry.create_reader('somestring')
     end
   end

@@ -9,7 +9,7 @@ READERS = [FileReader, UrlReader].freeze
 class ReadersRegistry
   def self.create_reader(source)
     reader = READERS.find { |r| r.can_read?(source) }
-    raise "'Can`t read source #{source}" if reader.nil?
+    raise TypeError, "'Can`t read source #{source}" if reader.nil?
 
     reader.new
   end
