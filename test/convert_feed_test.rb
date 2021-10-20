@@ -27,9 +27,9 @@ class ConvertFeedTest < Minitest::Test
   end
 
   def test_cmd_reverse_from_rss_file_to_atom
-    run_command "convert-feed -r --out atom #{RSS_NO_SORT_FIXTURE_FILEPATH}"
+    run_command "convert-feed -r -s --out atom #{RSS_NO_SORT_FIXTURE_FILEPATH}"
     expected_result = File.read(ATOM_FIXTURE_FILEPATH)
-    assert_equal expected_result.chomp, last_command.output
-    refute_empty last_command.error
+    assert_equal expected_result.chomp, last_command.output.chomp
+    assert_equal "", last_command.error
   end
 end

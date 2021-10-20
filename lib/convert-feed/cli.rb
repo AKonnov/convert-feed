@@ -23,17 +23,18 @@ module ConvertFeed
     private
 
     def parsed_options(args)
-      parsed_options = { handlers: {} }
-
+      parsed_options = {}
       opt_parser = OptionParser.new do |options|
         options.banner = "Usage: #{PROGRAM_NAME} [options]"
         options.on('-r', '--[no-]reverse', 'Reverse items') do |r|
-          parsed_options[:handlers][:reverse] = r
+          parsed_options[:reverse] = r
         end
         options.on('-s', '--[no-]sort', 'Sort items by published date') do |s|
-          parsed_options[:handlers][:sort] = s
+          parsed_options[:sort] = s
         end
         options.on('-o', '--out FORMAT', 'Output feed format: atom/rss/xml') do |type|
+          raise TypeError, 'Please, specify output format' if type.nil?
+          
           parsed_options[:out_format] = type.downcase
         end
         options.on('-f', '--file FILENAME', 'Output into file FILENAME') do |filename|

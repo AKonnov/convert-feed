@@ -13,7 +13,7 @@ class ExecutorTest < Minitest::Test
   ATOM_FIXTURE_FILEPATH = File.expand_path('../test/fixtures/input_atom.rss', __dir__)
 
   def test_rss_to_atom_to_output
-    options = { out: 'atom' }
+    options = { out_format: 'atom' }
     source = RSS_FIXTURE_FILEPATH
     out, err = capture_io do
       Executor.new.exec_command(options, source)
@@ -24,7 +24,7 @@ class ExecutorTest < Minitest::Test
   end
 
   def test_rss_to_rss_to_output
-    options = { out: 'rss' }
+    options = { out_format: 'rss' }
     source = RSS_FIXTURE_FILEPATH
     out, err = capture_io do
       Executor.new.exec_command(options, source)
@@ -35,7 +35,7 @@ class ExecutorTest < Minitest::Test
   end
 
   def test_atom_to_atom_to_output
-    options = { out: 'atom' }
+    options = { out_format: 'atom' }
     source = ATOM_FIXTURE_FILEPATH
     out, err = capture_io do
       Executor.new.exec_command(options, source)
@@ -46,7 +46,7 @@ class ExecutorTest < Minitest::Test
   end
 
   def test_atom_to_rss_to_output
-    options = { out: 'rss' }
+    options = { out_format: 'rss' }
     source = ATOM_FIXTURE_FILEPATH
     out, err = capture_io do
       Executor.new.exec_command(options, source)
@@ -57,7 +57,7 @@ class ExecutorTest < Minitest::Test
   end
 
   def test_rss_to_atom_reverse_to_output
-    options = { out: 'atom', reverse: true }
+    options = { out_format: 'atom', reverse: true }
     source = RSS_FIXTURE_FILEPATH
     out, err = capture_io do
       Executor.new.exec_command(options, source)
@@ -68,7 +68,7 @@ class ExecutorTest < Minitest::Test
   end
 
   def test_atom_to_rss_sort_to_output
-    options = { out: 'rss', sort: true, reverse: true }
+    options = { out_format: 'rss', sort: true, reverse: true }
     source = ATOM_NO_SORT_FIXTURE_FILEPATH
     out, err = capture_io do
       Executor.new.exec_command(options, source)
@@ -79,7 +79,7 @@ class ExecutorTest < Minitest::Test
   end
 
   def test_rss_to_atom_sort_to_output
-    options = { out: 'atom', sort: true, reverse: true }
+    options = { out_format: 'atom', sort: true, reverse: true }
     source = RSS_NO_SORT_FIXTURE_FILEPATH
     out, err = capture_io do
       Executor.new.exec_command(options, source)
