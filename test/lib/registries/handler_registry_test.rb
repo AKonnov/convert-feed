@@ -10,7 +10,7 @@ DATE_NOW = Date.today
 class HandlerRegistryTest < Minitest::Test
   def test_sort_by_date_handler
     options = { sort: true }
-    feed = EXPECTED_ROOT_ELEMENT
+    feed = create_default_root_element
     create_initial_items_for_sort.each { |i| feed.add_item(i) }
     sorted_feed = HandlerRegistry.handle(options, feed)
     assert_equal sorted_feed.items.first.published_date, (DATE_NOW - 4).to_datetime
@@ -19,19 +19,19 @@ class HandlerRegistryTest < Minitest::Test
 
   def test_reverse_handler
     options = { reverse: true }
-    feed = EXPECTED_ROOT_ELEMENT
+    feed = create_default_root_element
     create_initial_items_for_sort.each { |i| feed.add_item(i) }
     sorted_feed = HandlerRegistry.handle(options, feed)
-    assert_equal sorted_feed.items.first.title, 'Post 4'
+    assert_equal 'Post 4', sorted_feed.items.first.title
   end
 
   def test_no_change
     options = {}
-    feed = EXPECTED_ROOT_ELEMENT
+    feed = create_default_root_element
     create_initial_items_for_sort.each { |i| feed.add_item(i) }
     sorted_feed = HandlerRegistry.handle(options, feed)
-    assert_equal sorted_feed.items.first.title, 'Post 0'
-    assert_equal sorted_feed.items.first.published_date.to_s, DATE_NOW.to_datetime.to_s
+    assert_equal 'Post 0', sorted_feed.items.first.title
+    assert_equal DATE_NOW.to_datetime.to_s, sorted_feed.items.first.published_date.to_s
   end
 
   private

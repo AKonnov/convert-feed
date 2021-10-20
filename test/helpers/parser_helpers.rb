@@ -3,12 +3,15 @@
 require_relative '../../lib/dto/feed_item_dto'
 require_relative '../../lib/dto/feed_dto'
 
-EXPECTED_ROOT_ELEMENT = FeedDto.new(
-  'https://ru.hexlet.io/',
-  'Новые уроки на Хекслете',
-  'Практические уроки по программированию',
-  '2021-10-18T08:41:12+00:00'
-)
+def create_default_root_element
+  FeedDto.new(
+    'https://ru.hexlet.io/',
+    'Новые уроки на Хекслете',
+    'Практические уроки по программированию',
+    '2021-10-18T08:41:12+00:00'
+  )
+end
+
 EXPECTED_FIRST_ITEM_DATA = {
   id: 'https://ru.hexlet.io/courses/gulp/lessons/gulpfile/theory_unit',
   title: 'Gulpfile / Gulp',
