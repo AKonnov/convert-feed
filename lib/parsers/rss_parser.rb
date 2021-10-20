@@ -2,6 +2,8 @@
 
 require 'nokogiri'
 require 'date'
+require_relative '../dto/feed_dto'
+require_relative '../dto/feed_item_dto'
 
 # Parsed rss to Dto
 class RssParser

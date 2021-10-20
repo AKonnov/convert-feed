@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 require 'nokogiri'
+require_relative '../dto/feed_dto'
+require_relative '../dto/feed_item_dto'
 
 # Parsed atom to Dto
 class AtomParser
