@@ -9,4 +9,10 @@ class FileReaderTest < Minitest::Test
   def test_can_read
     assert FileReader.can_read?(FILEPATH)
   end
+
+  def test_read
+    readed = FileReader.new.read(FILEPATH)
+    assert readed.length > 10
+    assert readed.index('xml version="1.0" encoding="UTF-8"')
+  end
 end

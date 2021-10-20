@@ -13,6 +13,10 @@ class UrlReader
   end
 
   def read(source)
-    raise NotImplementedError, 'Need implement'
+    uri = URI.parse(source)
+    response = Net::HTTP.get_response(uri)
+    response.body
+  rescue StandardError
+    nil
   end
 end

@@ -6,7 +6,7 @@ class FileReader
     File.file?(source)
   end
 
-  def self.read(source)
-    raise NotImplementedError, 'Need implement'
+  def read(source)
+    File.read(source)
   end
 end
