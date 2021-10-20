@@ -2,7 +2,7 @@
 
 # Feed item dto for manipulation data
 class FeedItemDto
-  attr_reader :id, :title, :link, :description, :published_date, :update_date, :author
+  attr_reader :id, :title, :link, :description, :author
 
   def initialize(data)
     @id = data[:id]
@@ -13,4 +13,13 @@ class FeedItemDto
     @author = data[:author]
     @update_date = data[:update_date] || data[:published_date]
   end
+
+  def published_date
+    DateTime.parse @published_date
+  end
+
+  def update_date
+    DateTime.parse @update_date
+  end
+
 end

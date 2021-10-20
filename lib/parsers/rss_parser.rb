@@ -27,7 +27,7 @@ class RssParser
       @input_feed.xpath('//link').first.content,
       @input_feed.xpath('//title').first.content,
       @input_feed.xpath('//description').first.content,
-      updated_date
+      updated_date.to_s
     )
   end
 
