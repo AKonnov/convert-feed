@@ -18,3 +18,8 @@ $ convert-feed --out rss feed.xml
 $ convert-feed --out atom https://ru.hexlet.io/lessons.rss
 $ convert-feed --out atom -f output.rss https://ru.hexlet.io/lessons.rss
 ```
+
+### Запуск тестов:
+```bash
+$ make test
+```
