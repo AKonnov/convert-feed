@@ -14,6 +14,7 @@ class HandlerRegistryTest < Minitest::Test
     create_initial_items_for_sort.each { |i| feed.add_item(i) }
     sorted_feed = HandlerRegistry.handle(options, feed)
     assert_equal sorted_feed.items.first.published_date, (DATE_NOW - 4).to_datetime
+    assert sorted_feed.items.first.published_date < sorted_feed.items.last.published_date
   end
 
   def test_reverse_handler
@@ -30,7 +31,7 @@ class HandlerRegistryTest < Minitest::Test
     create_initial_items_for_sort.each { |i| feed.add_item(i) }
     sorted_feed = HandlerRegistry.handle(options, feed)
     assert_equal sorted_feed.items.first.title, 'Post 0'
-    assert_equal sorted_feed.items.first.published_date, DATE_NOW.to_datetime
+    assert_equal sorted_feed.items.first.published_date.to_s, DATE_NOW.to_datetime.to_s
   end
 
   private
@@ -40,8 +41,8 @@ class HandlerRegistryTest < Minitest::Test
     5.times do |i|
       object_data = {
         id: "https://ru.hexlet.io/#{i}", title: "Post #{i}", link: "https://ru.hexlet.io/#{i}",
-        description: 'description', published_date: (DATE_NOW - i).to_datetime,
-        update_date: (DATE_NOW - i).to_datetime  # new first
+        description: 'description', published_date: (DATE_NOW - i).to_datetime.to_s,
+        update_date: (DATE_NOW - i).to_datetime.to_s  # new first
       }
       expected_items.push(FeedItemDto.new(object_data))
     end
