@@ -15,7 +15,8 @@ EXPECTED_FIRST_ITEM_DATA = {
   link: 'https://ru.hexlet.io/courses/gulp/lessons/gulpfile/theory_unit',
   description: 'Цель: Изучить базовую структуру gulpfile.js. Создать свои первые задачи и научиться их экспортировать',
   published_date: '2021-10-18T08:41:12+00:00',
-  update_date: '2021-10-18T08:41:12+00:00'
+  update_date: '2021-10-18T08:41:12+00:00',
+  author: { name: 'info@hexlet.io', uri: 'https://ru.hexlet.io/', email: 'info@hexlet.io' }
 }.freeze
 EXPECTED_FIRST_ITEM_ELEMENT = FeedItemDto.new(EXPECTED_FIRST_ITEM_DATA)
 

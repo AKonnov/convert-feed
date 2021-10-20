@@ -13,38 +13,47 @@ class RssParser
   end
 
   def parse(data)
-    data = Nokogiri::XML(data)
+    @input_feed = Nokogiri::XML(data)
     items = []
-    data.xpath('//item').each { |item| items.push(parse_item(item)) }
+    @input_feed.xpath('//item').each { |item| items.push(parse_item(item)) }
     last = items.max_by(&:published_date)
-    result = parse_root(data, last ? last.update_date : nil)
+    result = parse_root(last ? last.update_date : nil)
     items.each { |i| result.add_item i }
     result
   end
 
-  def parse_root(data, updated_date)
+  def parse_root(updated_date)
     FeedDto.new(
-      data.xpath('//link').first.content,
-      data.xpath('//title').first.content,
-      data.xpath('//description').first.content,
+      @input_feed.xpath('//link').first.content,
+      @input_feed.xpath('//title').first.content,
+      @input_feed.xpath('//description').first.content,
       updated_date
     )
   end
 
-  def parse_item(data)
-    link = data.search('link').text
-    date = parse_date(data.search('pubDate').text)
+  def parse_item(item_data)
+    link = item_data.search('link').text
+    date = parse_date(item_data.search('pubDate').text)
     FeedItemDto.new({
                       id: link,
-                      title: data.search('title').text,
+                      title: item_data.search('title').text,
                       link: link,
-                      description: data.search('description').text,
+                      description: item_data.search('description').text,
                       published_date: date,
-                      updated: date
+                      updated: date,
+                      author: parse_author
                     })
   end
 
   def parse_date(date_str)
     DateTime.parse(date_str.to_s).to_s
+  end
+
+  def parse_author
+    {
+      name: @input_feed.xpath('//webMaster').first.content,
+      uri: @input_feed.xpath('//link').first.content,
+      email: @input_feed.xpath('//webMaster').first.content
+    }
   end
 end
