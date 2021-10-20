@@ -4,6 +4,9 @@ require 'minitest/autorun'
 require_relative './support/command_helper'
 
 class ConvertFeedTest < Minitest::Test
+  ATOM_FIXTURE_FILEPATH = File.expand_path('../test/fixtures/input_atom.rss', __dir__)
+  RSS_NO_SORT_FIXTURE_FILEPATH = File.expand_path('fixtures/input_rss.not_sorted.rss', __dir__)
+
   include CommandHelper
   def test_command_help_success
     run_command 'convert-feed -h'
@@ -21,5 +24,12 @@ class ConvertFeedTest < Minitest::Test
     run_command 'convert-feed'
     assert_equal 'Missing arguments, see help for additional info', last_command.output
     assert_equal 1, last_command.exit_status
+  end
+
+  def test_cmd_reverse_from_rss_file_to_atom
+    run_command "convert-feed -r --out atom #{RSS_NO_SORT_FIXTURE_FILEPATH}"
+    expected_result = File.read(ATOM_FIXTURE_FILEPATH)
+    assert_equal expected_result.chomp, last_command.output
+    refute_empty last_command.error
   end
 end

@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require 'optparse'
+require_relative '../executor'
 
 PROGRAM_NAME = 'convert-feed'
 
@@ -16,7 +17,7 @@ module ConvertFeed
       parsed_options = parsed_options(argv)
       return parsed_options if parsed_options.nil?
 
-      # Executor.new.exec_command(parsed_options, argv.first)
+      Executor.new.exec_command(parsed_options, argv.first)
     end
 
     private
