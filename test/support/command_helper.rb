@@ -13,7 +13,6 @@ module CommandHelper
     output, error = capture_io do
       last_command.exit_status = ConvertFeed::CLI.new.run(arguments).nil? ? 0 : 1
     end
-    puts output
     last_command.output = output
     last_command.error = error
   end
